@@ -1,16 +1,25 @@
+# 使用 Node 的基础镜像进行构建
 FROM node:22-alpine as builder
 
+# 设置工作目录
 WORKDIR /app
 
-COPY . .
+# 将 package.json 和 pnpm-lock.yaml（如果存在）复制到容器
+COPY package.json pnpm-lock.yaml* ./
 
+# 安装 pnpm，并安装依赖
 RUN npm install -g pnpm
 RUN pnpm install
 
+# 复制剩余的项目文件到工作目录
+COPY . .
+
+# 构建项目
 RUN pnpm build
 
 # 部署阶段
 FROM nginx:mainline-alpine3.20-slim
+
 # 复制构建好的前端静态文件到 nginx 默认的静态目录
 COPY --from=builder /app/dist /usr/share/nginx/html
 
