@@ -1,6 +1,5 @@
-import { useStore } from '@/store';
 import _axios, { AxiosError } from 'axios';
-import { ErrorMessage, UserInfo } from './type';
+import { ErrorMessage } from './type';
 
 const ApiPath = {
   PROBLEM: '/api/core/problem',
@@ -23,32 +22,7 @@ function resolveError(error: any): ErrorMessage {
   }
 }
 
-function buildHeaders(userInfo: UserInfo | null): any {
-  if (userInfo == null) {
-    return {
-      'Content-Type': 'application/json'
-    };
-  } else {
-    return {
-      'Content-Type': 'application/json',
-      Authorization: `Baerer ${userInfo.token}`
-    };
-  }
-}
-
 const axios = _axios.create();
-
-// 请求拦截器
-axios.interceptors.request.use(
-  (config) => {
-    const user = useStore().user;
-    config.headers = buildHeaders(user.userInfo);
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
 
 export default axios;
 export { ApiPath, resolveError };

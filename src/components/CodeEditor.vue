@@ -21,7 +21,6 @@
 <script setup lang="ts">
 import type { LanguageOption, SourceCode } from '@/type';
 import { LanguageOptions } from '@/type';
-import { LanguageUtil } from '@/utils';
 import { SendRound } from '@vicons/material';
 import CodeMirror, { type Editor, type EditorConfiguration } from 'codemirror';
 import 'codemirror/addon/edit/closebrackets.js';
@@ -76,7 +75,6 @@ const props = withDefaults(
   defineProps<{
     value: string;
     loading: boolean;
-    availableLanguages: number | null; // 可用语言，未指定时使用所有语言
     theme: 'light' | 'dark';
   }>(),
   {
@@ -92,22 +90,6 @@ const emit = defineEmits<{
   // eslint-disable-next-line no-unused-vars
   (e: 'submit', value: SourceCode): void;
 }>();
-
-watch(
-  () => props.availableLanguages,
-  (val) => {
-    if (val == null) {
-      return;
-    }
-
-    const languageArray = LanguageUtil.toArray(val);
-    languageOptions.value = [];
-    languageArray.forEach((v) => {
-      languageOptions.value.push(LanguageOptions[v]);
-    });
-  },
-  { immediate: true }
-);
 
 watch(
   () => props.theme,

@@ -5,17 +5,7 @@ export class Problem {
   problemId?: number;
   title = '';
   description = '';
-  languages: number | null = null;
-  category = '';
   tags: Array<string> = [];
-  enable = false;
-  createAt?: number;
-  score?: number;
-  result?: number;
-  resultText?: string;
-  timeout?: number;
-  memoryLimit?: number;
-  outputLimit?: number;
 }
 
 /**

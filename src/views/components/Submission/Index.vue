@@ -8,32 +8,7 @@
             <n-h3 style="margin-bottom: 6px">
               {{ `${problem.problemId}.${problem.title}` }}
             </n-h3>
-            <n-space size="small">
-              <n-tag type="success" size="small" round :bordered="false">
-                <template #icon>
-                  <n-icon :component="HelpRound" />
-                </template>
-                {{ problem.score }} 分
-              </n-tag>
-              <n-tag type="error" size="small" round :bordered="false">
-                <template #icon>
-                  <n-icon :component="TimerOutlined" />
-                </template>
-                时间限制 {{ problem.timeout }} ms
-              </n-tag>
-              <n-tag type="warning" size="small" round :bordered="false">
-                <template #icon>
-                  <n-icon :component="DataSaverOffRound" />
-                </template>
-                内存限制 {{ problem.memoryLimit }} MB
-              </n-tag>
-              <n-tag type="info" size="small" round :bordered="false">
-                <template #icon>
-                  <n-icon :component="PrintRound" />
-                </template>
-                输出限制 {{ problem.outputLimit }} MB
-              </n-tag>
-            </n-space>
+
             <!-- 题目内容 -->
             <markdown-view :content="problem.description" :theme="theme" style="margin-top: 12px" />
           </n-scrollbar>
@@ -54,12 +29,7 @@
       </n-tabs>
       <!-- 代码编辑器 -->
       <div>
-        <code-editor
-          :value="code"
-          :theme="theme"
-          :loading="disableSubmit"
-          :available-languages="problem.languages"
-          @submit="submitClick" />
+        <code-editor :value="code" :theme="theme" :loading="disableSubmit" @submit="submitClick" />
       </div>
     </div>
   </div>
@@ -80,9 +50,8 @@ import { CodeEditor, MarkdownView } from '@/components';
 import { useStore } from '@/store';
 import { type SourceCode } from '@/type';
 import { setTitle } from '@/utils';
-import { DataSaverOffRound, HelpRound, PrintRound, TimerOutlined } from '@vicons/material';
 import _ from 'lodash';
-import { NH3, NIcon, NModal, NScrollbar, NSpace, NTabPane, NTabs, NTag, useMessage } from 'naive-ui';
+import { NH3, NModal, NScrollbar, NTabPane, NTabs, useMessage } from 'naive-ui';
 import { computed, inject, onBeforeMount, ref } from 'vue';
 import ResultDialog from './ResultDialog.vue';
 import Skeleton from './Skeleton.vue';
