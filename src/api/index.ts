@@ -3,37 +3,9 @@ import _axios, { AxiosError } from 'axios';
 import { ErrorMessage, UserInfo } from './type';
 
 const ApiPath = {
-  LOGIN: '/api/auth/login',
-  LOGOFF: '/api/auth/logoff',
-  REFRESH_TOKEN: '/api/auth/refresh_token',
-  VERIFY: '/api/auth/verify',
-  IMAGE: '/api/core/file/img',
-  AVATAR: '/api/core/file/img/avatar',
-  TEST_DATA: '/api/core/file/data',
-  SPJ: '/api/core/file/spj',
-  PROBLEM_IMAGE: '/api/core/file/img/problem',
-  PROBLEM_ADMIN: '/api/core/problem/admin',
   PROBLEM: '/api/core/problem',
-  USER: '/api/core/user',
-  USER_ADMIN: '/api/core/user/admin',
-  CONTEST: '/api/core/contest',
-  CONTEST_INVITATION: '/api/core/contest/invitation',
-  CONTEST_PROBLEM: '/api/core/contest/problem',
-  CONTEST_ADMIN: '/api/core/contest/admin',
-  CONTEST_KEY: '/api/core/contest/admin/key',
-  CONTEST_PROBLEM_ORDER: '/api/core/contest/admin/problem/order',
-  CONTEST_RANKING: '/api/core/ranking/contest',
-  CONTEST_RANKING_ADMIN: '/api/core/ranking/admin/contest',
-  RANKING: '/api/core/ranking',
-  SOLUTION: '/api/core/solution',
-  SOLUTION_ADMIN: '/api/core/solution/admin',
-  SUBMIT: '/api/judge/submit',
-  ADMIN_SUBMIT: '/api/judge/admin/submit',
-  QUEUE_INFO: '/api/judge/admin/queue_info',
-  PROFILE: '/api/core/user/profile',
-  OVERVIEW: '/api/core/user/overview',
-  SETTINGS: '/api/core/settings',
-  LOG: '/api/core/log'
+
+  SUBMIT: '/api/judge/submit'
 };
 
 function resolveError(error: any): ErrorMessage {

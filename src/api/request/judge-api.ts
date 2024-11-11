@@ -1,6 +1,5 @@
 import axios, { ApiPath, resolveError } from '@/api';
 import type { SubmitData } from '@/api/type';
-import { useStore } from '@/store';
 
 const JudgeApi = {
   /**
@@ -8,8 +7,7 @@ const JudgeApi = {
    */
   submit(data: SubmitData): Promise<number> {
     return new Promise<number>((resolve, reject) => {
-      const role = useStore().user.userInfo!.role;
-      const path = role === 1 ? ApiPath.SUBMIT : ApiPath.ADMIN_SUBMIT;
+      const path = ApiPath.SUBMIT;
 
       axios({
         url: path,
