@@ -4,15 +4,12 @@ FROM node:22-alpine as builder
 # 设置工作目录
 WORKDIR /app
 
-# 将 package.json 和 pnpm-lock.yaml（如果存在）复制到容器
-COPY package.json pnpm-lock.yaml* ./
-
+COPY . .
 # 安装 pnpm，并安装依赖
 RUN npm install -g pnpm
 RUN pnpm install
 
-# 复制剩余的项目文件到工作目录
-COPY . .
+# 复制项目的其他文件到容器
 
 # 构建项目
 RUN pnpm build
