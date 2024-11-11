@@ -1,8 +1,7 @@
-import { fileURLToPath, URL } from "node:url"
-import { defineConfig } from "vite"
-import vue from "@vitejs/plugin-vue"
-import vueJsx from "@vitejs/plugin-vue-jsx"
-import viteCompression from "vite-plugin-compression"
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import viteCompression from 'vite-plugin-compression';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,16 +14,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": "/src"
-    }
-  },
-  server: {
-    host: true,
-    proxy: {
-      "/api": {
-        target: "http://127.0.0.1:8080",
-        changeOrigin: true
-      }
+      '@': '/src'
     }
   }
-})
+});

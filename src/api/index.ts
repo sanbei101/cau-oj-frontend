@@ -2,9 +2,9 @@ import _axios, { AxiosError } from 'axios';
 import { ErrorMessage } from './type';
 
 const ApiPath = {
-  PROBLEM: '/api/core/problem',
-  SOLUTION: '/api/core/solution',
-  SUBMIT: '/api/judge/submit'
+  PROBLEM: '/core/problem',
+  SOLUTION: '/core/solution',
+  SUBMIT: '/judge/submit'
 };
 
 function resolveError(error: any): ErrorMessage {
@@ -22,7 +22,8 @@ function resolveError(error: any): ErrorMessage {
   }
 }
 
-const axios = _axios.create();
-
+const axios = _axios.create({
+  baseURL: 'http://125.91.126.101:3000'
+});
 export default axios;
 export { ApiPath, resolveError };
