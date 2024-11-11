@@ -4,7 +4,7 @@ import { ErrorMessage, UserInfo } from './type';
 
 const ApiPath = {
   PROBLEM: '/api/core/problem',
-
+  SOLUTION: '/api/core/solution',
   SUBMIT: '/api/judge/submit'
 };
 

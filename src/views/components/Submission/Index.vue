@@ -74,7 +74,7 @@
 </template>
 
 <script setup lang="ts">
-import { ContestApi, JudgeApi, ProblemApi } from '@/api/request';
+import { JudgeApi, ProblemApi } from '@/api/request';
 import { ErrorMessage, Problem, type SubmitData } from '@/api/type';
 import { CodeEditor, MarkdownView } from '@/components';
 import { useStore } from '@/store';
@@ -86,7 +86,6 @@ import { NH3, NIcon, NModal, NScrollbar, NSpace, NTabPane, NTabs, NTag, useMessa
 import { computed, inject, onBeforeMount, ref } from 'vue';
 import ResultDialog from './ResultDialog.vue';
 import Skeleton from './Skeleton.vue';
-import SolutionSingle from './Solutions.vue';
 
 const store = useStore();
 const message = useMessage();
@@ -134,21 +133,7 @@ onBeforeMount(() => {
  */
 function queryProblem() {
   if (contestId == null) {
-    // 非竞赛题目
     ProblemApi.getSingle(problemId!)
-      .then((data) => {
-        setTitle(data.title);
-        problem.value = data;
-      })
-      .catch((err: ErrorMessage) => {
-        store.app.setError(err);
-      })
-      .finally(() => {
-        loading.value = false;
-      });
-  } else {
-    // 竞赛题目
-    ContestApi.getProblem(contestId, problemId!)
       .then((data) => {
         setTitle(data.title);
         problem.value = data;
