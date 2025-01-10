@@ -84,5 +84,5 @@ const html = computed<string>(() => md.render(props.content));
 </script>
 
 <style lang="scss">
-@import 'theme';
+@use 'theme';
 </style>
