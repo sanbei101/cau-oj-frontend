@@ -1,0 +1,19 @@
+arrowParens: always # 总是为箭头函数添加括号（例如：x => x + 1 → (x) => x + 1）
+bracketSameLine: true # 控制多行 JSX 元素的闭合标签是否放在同一行
+bracketSpacing: true # 对象字面量中的大括号前后加空格（例如：{ foo: bar }）
+semi: true # 语句末尾使用分号（例如：const a = 1;）
+experimentalTernaries: false # 不允许使用三元表达式的实验性语法
+singleQuote: true # 使用单引号而不是双引号（例如：'abc' 而不是 "abc"）
+jsxSingleQuote: false # 在 JSX 中使用双引号，而不是单引号
+quoteProps: as-needed # 只有在对象的键名需要引号时才添加引号
+trailingComma: none # 不在多行元素或对象的末尾添加逗号
+singleAttributePerLine: false # 允许在 JSX 中单行写多个属性，而不是每个属性一行
+htmlWhitespaceSensitivity: css # HTML 中的空白符处理方式，使用 CSS 规则（例如：display: flex 会保留空白符）
+vueIndentScriptAndStyle: false # 不缩进 Vue 文件中的 `<script>` 和 `<style>` 标签
+proseWrap: preserve # 保持文本内容的原始格式，避免自动换行
+insertPragma: false # 不插入文件头的格式化注释（如 `/* @format */`）
+printWidth: 140 # 每行的最大字符数，超过则自动换行
+requirePragma: false # 不强制要求文件顶部有格式化的注释
+tabWidth: 2 # 每个缩进的宽度为2个空格
+useTabs: false # 不使用制表符（Tab）进行缩进，使用空格
+embeddedLanguageFormatting: auto # 自动格式化嵌入式语言（如 HTML 或 CSS 中的 JavaScript）
