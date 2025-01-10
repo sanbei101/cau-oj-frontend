@@ -17,7 +17,7 @@ export type Page<T> = {
 };
 
 export type SubmitData = {
-  uid: number;
+  // uid: number;
   problemId: number;
   contestId: number | null;
   language: number;

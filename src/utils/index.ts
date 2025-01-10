@@ -1,7 +1,5 @@
 import { h } from 'vue';
 import { NIcon } from 'naive-ui';
-import { Contest } from '@/api/type';
-import { InfoRound, PlayArrowRound } from '@vicons/material';
 
 type StateTag = {
   type: 'info' | 'error' | 'success';
@@ -19,28 +17,6 @@ const renderIcon = (icon: any, color: string | undefined = undefined) => {
       default: () => h(icon)
     });
 };
-
-function stateTag(c: Contest): StateTag {
-  if (c.ended) {
-    return {
-      type: 'error',
-      state: '已结束',
-      icon: InfoRound
-    };
-  } else if (c.started) {
-    return {
-      type: 'success',
-      state: '进行中',
-      icon: PlayArrowRound
-    };
-  } else {
-    return {
-      type: 'info',
-      state: '未开始',
-      icon: InfoRound
-    };
-  }
-}
 
 function timeUsage(val?: number): string {
   if (val) {
@@ -63,5 +39,5 @@ function ramUsage(val?: number): string {
 }
 
 export { default as LanguageUtil } from './LanguageUtil';
-export { setTitle, renderIcon, stateTag, timeUsage, ramUsage };
+export { setTitle, renderIcon, timeUsage, ramUsage };
 export type { StateTag };

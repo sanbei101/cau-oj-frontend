@@ -4,13 +4,7 @@
       <n-space vertical size="large">
         <n-space align="center">
           <n-input-group>
-            <n-input
-              v-model:value="keyword"
-              maxlength="10"
-              show-count
-              clearable
-              placeholder="输入题目名称、分类"
-              @clear="search" />
+            <n-input v-model:value="keyword" maxlength="10" show-count clearable placeholder="输入题目名称、分类" @clear="search" />
             <n-button type="primary" @click="search">
               搜索题目
               <template #icon>
@@ -46,17 +40,7 @@ import { ErrorMessage, type Page, Problem } from '@/api/type';
 import { useStore } from '@/store';
 import { setTitle } from '@/utils';
 import { SearchRound } from '@vicons/material';
-import {
-  type DataTableColumns,
-  NButton,
-  NDataTable,
-  NIcon,
-  NInput,
-  NInputGroup,
-  NPagination,
-  NSpace,
-  NTag
-} from 'naive-ui';
+import { type DataTableColumns, NButton, NDataTable, NIcon, NInput, NInputGroup, NPagination, NSpace, NTag } from 'naive-ui';
 import { nextTick, onBeforeMount, ref } from 'vue';
 import { RouterLink, useRoute, useRouter } from 'vue-router';
 
@@ -78,9 +62,7 @@ const problemColumns: DataTableColumns<Problem> = [
     key: '#',
     align: 'right',
     width: 50,
-    render: (_, rowIndex: number) => (
-      <span>{(pagination.value.page - 1) * pagination.value.pageSize + rowIndex + 1}</span>
-    )
+    render: (_, rowIndex: number) => <span>{(pagination.value.page - 1) * pagination.value.pageSize + rowIndex + 1}</span>
   },
   {
     title: 'ID',
@@ -107,14 +89,7 @@ const problemColumns: DataTableColumns<Problem> = [
       const tags = row.tags;
       return tags.map((tag) => {
         return (
-          <NTag
-            class="tag"
-            size="small"
-            type="primary"
-            round
-            bordered={false}
-            // @ts-ignore
-            onClick={() => tagClick(tag)}>
+          <NTag class="tag" size="small" type="primary" round bordered={false} key={tag} onClick={() => tagClick(tag)}>
             {tag}
           </NTag>
         );

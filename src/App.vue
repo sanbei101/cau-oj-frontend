@@ -23,7 +23,6 @@ const router = useRouter();
 const show = ref(true);
 const theme = computed(() => store.app.theme);
 const themeStr = computed(() => (store.app.theme === null ? 'light' : 'dark'));
-const isLoggedIn = computed(() => store.user.isLoggedIn);
 
 const themeOverrides = computed<GlobalThemeOverrides>(() => {
   if (store.app.theme != null) {
@@ -52,11 +51,6 @@ router.beforeEach((to, from) => {
   } else if (store.app.error === null) {
     // 意外进入错误页面却没有错误信息，返回上一页
     router.replace({ path: from.fullPath });
-  }
-
-  if (isLoggedIn.value) {
-    // 已登录，检查是否有效
-    checkToken();
   }
 });
 

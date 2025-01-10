@@ -13,12 +13,7 @@
             <markdown-view :content="problem.description" :theme="theme" style="margin-top: 12px" />
           </n-scrollbar>
         </n-tab-pane>
-        <n-tab-pane
-          v-if="isLoggedIn"
-          name="solutions"
-          tab="提交记录"
-          display-directive="show"
-          style="height: calc(100% - 54px)">
+        <n-tab-pane name="solutions" tab="提交记录" display-directive="show" style="height: calc(100% - 54px)">
           <n-scrollbar>
             <n-h3 style="margin-bottom: 6px">
               {{ `${problem.problemId}.${problem.title}` }}
@@ -33,12 +28,7 @@
       </div>
     </div>
   </div>
-  <n-modal
-    v-model:show="showResult"
-    :auto-focus="false"
-    :mask-closable="false"
-    preset="card"
-    style="width: 600px; margin-top: 200px">
+  <n-modal v-model:show="showResult" :auto-focus="false" :mask-closable="false" preset="card" style="width: 600px; margin-top: 200px">
     <result-dialog :submit-time="submitTime" style="margin-bottom: 12px" />
   </n-modal>
 </template>
@@ -52,7 +42,7 @@ import { type SourceCode } from '@/type';
 import { setTitle } from '@/utils';
 import _ from 'lodash';
 import { NH3, NModal, NScrollbar, NTabPane, NTabs, useMessage } from 'naive-ui';
-import { computed, inject, onBeforeMount, ref } from 'vue';
+import { inject, onBeforeMount, ref } from 'vue';
 import ResultDialog from './ResultDialog.vue';
 import Skeleton from './Skeleton.vue';
 
@@ -71,7 +61,7 @@ const code = ref<string>('');
 const submitTime = ref<number>(0);
 
 const theme = inject('themeStr') as 'light' | 'dark';
-const isLoggedIn = computed(() => store.user.isLoggedIn);
+// const isLoggedIn = computed(() => store.user.isLoggedIn);
 
 let problemId: number | null = null;
 let contestId: number | null = null;
@@ -131,8 +121,7 @@ function submit(data: SourceCode) {
     problemId: problemId!,
     contestId,
     sourceCode: data.code.trim(),
-    type: 0,
-    uid: store.user.userInfo!.uid!
+    type: 0
   };
 
   JudgeApi.submit(submitData)
