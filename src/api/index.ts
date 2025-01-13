@@ -2,7 +2,7 @@ import _axios, { AxiosError } from 'axios';
 import { ErrorMessage } from './type';
 
 const ApiPath = {
-  PROBLEM: '/core/problem',
+  PROBLEM: '/problem/get-all-problem',
   SOLUTION: '/core/solution',
   SUBMIT: '/judge/submit'
 };
@@ -23,7 +23,7 @@ function resolveError(error: any): ErrorMessage {
 }
 
 const axios = _axios.create({
-  baseURL: 'http://125.91.126.101:3000'
+  baseURL: 'https://oj-back.sanbei101.tech'
 });
 export default axios;
 export { ApiPath, resolveError };
