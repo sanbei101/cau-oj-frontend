@@ -18,7 +18,6 @@
             <n-h3 style="margin-bottom: 6px">
               {{ `${problem.problemId}.${problem.title}` }}
             </n-h3>
-            <solution-single :problem-id="pid" />
           </n-scrollbar>
         </n-tab-pane>
       </n-tabs>
@@ -42,16 +41,12 @@ import { type SourceCode } from '@/type';
 import { setTitle } from '@/utils';
 import _ from 'lodash';
 import { NH3, NModal, NScrollbar, NTabPane, NTabs, useMessage } from 'naive-ui';
-import { inject, onBeforeMount, ref } from 'vue';
+import { inject, onBeforeMount, ref, watch } from 'vue';
 import ResultDialog from './ResultDialog.vue';
 import Skeleton from './Skeleton.vue';
 
 const store = useStore();
 const message = useMessage();
-
-const props = withDefaults(defineProps<{ pid: string; cid: string | null }>(), {
-  cid: null
-});
 
 const loading = ref<boolean>(true);
 const showResult = ref<boolean>(false);
@@ -60,50 +55,38 @@ const problem = ref<Problem>(new Problem());
 const code = ref<string>('');
 const submitTime = ref<number>(0);
 
+watch(code, (newcode) => {
+  console.log(newcode);
+});
+
 const theme = inject('themeStr') as 'light' | 'dark';
 // const isLoggedIn = computed(() => store.user.isLoggedIn);
 
-let problemId: number | null = null;
-let contestId: number | null = null;
+const props = defineProps<{
+  pid: number;
+}>();
 
 const submitClick = _.throttle(submit, 1000);
 
 onBeforeMount(() => {
-  const reg = /^\d+$/;
-
-  if (props.cid != null && reg.test(props.cid)) {
-    contestId = Number(props.cid);
-  }
-
-  if (reg.test(props.pid)) {
-    problemId = Number(props.pid);
-    queryProblem();
-  } else {
-    store.app.setError({
-      status: 404,
-      error: 'Not Found',
-      message: '找不到题目'
-    });
-  }
+  queryProblem();
 });
 
 /**
  * 获取题目数据
  */
 function queryProblem() {
-  if (contestId == null) {
-    ProblemApi.getSingle(problemId!)
-      .then((data) => {
-        setTitle(data.title);
-        problem.value = data;
-      })
-      .catch((err: ErrorMessage) => {
-        store.app.setError(err);
-      })
-      .finally(() => {
-        loading.value = false;
-      });
-  }
+  ProblemApi.getSingle(props.pid)
+    .then((data) => {
+      setTitle(data.title);
+      problem.value = data;
+    })
+    .catch((err: ErrorMessage) => {
+      store.app.setError(err);
+    })
+    .finally(() => {
+      loading.value = false;
+    });
 }
 
 /**
@@ -118,8 +101,7 @@ function submit(data: SourceCode) {
 
   const submitData: SubmitData = {
     language: data.language,
-    problemId: problemId!,
-    contestId,
+    problemId: props.pid,
     sourceCode: data.code.trim(),
     type: 0
   };

@@ -31,14 +31,14 @@ const ProblemApi = {
    * 获取单个题目
    */
   async getSingle(pid: number): Promise<Problem> {
-    const path = ApiPath.PROBLEM;
-
     try {
       const res = await axios({
-        url: `${path}/${pid}`,
-        method: 'GET'
+        url: ApiPath.SingleProblem,
+        method: 'GET',
+        params: {
+          id: pid
+        }
       });
-
       return res.data as Problem;
     } catch (error) {
       throw resolveError(error);

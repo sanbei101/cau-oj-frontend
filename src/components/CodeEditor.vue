@@ -134,6 +134,7 @@ onMounted(() => {
 
 function submit() {
   emit('submit', { language: language.value, code: cmEditor!.getValue() });
+  console.log(cmEditor!.getValue());
 }
 </script>
 
