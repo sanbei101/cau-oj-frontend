@@ -52,8 +52,8 @@ importers:
         specifier: ^0.16.7
         version: 0.16.7
       '@types/lodash':
-        specifier: ^4.17.9
-        version: 4.17.12
+        specifier: ^4.17.14
+        version: 4.17.14
       '@types/markdown-it':
         specifier: ^14.1.2
         version: 14.1.2
@@ -592,8 +592,8 @@ packages:
   '@types/lodash-es@4.17.12':
     resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
 
-  '@types/lodash@4.17.12':
-    resolution: {integrity: sha512-sviUmCE8AYdaF/KIHLDJBQgeYzPBI0vf/17NaYehBJfYD1j6/L95Slh07NlyK2iNyBNaEkb3En2jRt+a8y3xZQ==}
+  '@types/lodash@4.17.14':
+    resolution: {integrity: sha512-jsxagdikDiDBeIRaPYtArcT8my4tN1og7MtMRquFT3XNA6axxyHDRUemqDz/taRDdOUn0GnGHRCuff4q48sW9A==}
 
   '@types/markdown-it-container@2.0.10':
     resolution: {integrity: sha512-zv+YxrlSYRq51e9kzm3orv4OvF4U79Ll1OyplNXr00o4ZC/8PukJk/jEWH7CnsMtrSWZlyv0czhz42jm9J4uLw==}
@@ -1637,9 +1637,9 @@ snapshots:
 
   '@types/lodash-es@4.17.12':
     dependencies:
-      '@types/lodash': 4.17.12
+      '@types/lodash': 4.17.14
 
-  '@types/lodash@4.17.12': {}
+  '@types/lodash@4.17.14': {}
 
   '@types/markdown-it-container@2.0.10':
     dependencies:
@@ -2100,7 +2100,7 @@ snapshots:
       '@css-render/plugin-bem': 0.15.14(css-render@0.15.14)
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.13(typescript@5.7.3))
       '@types/katex': 0.16.7
-      '@types/lodash': 4.17.12
+      '@types/lodash': 4.17.14
       '@types/lodash-es': 4.17.12
       async-validator: 4.2.5
       css-render: 0.15.14
