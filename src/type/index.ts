@@ -14,11 +14,9 @@ export type LanguageOption = {
 
 export const LanguageOptions: Array<LanguageOption> = [
   { value: 'c', label: 'C', version: '11' },
-  { value: 'c++', label: 'C++', version: '14' },
+  { value: 'cpp', label: 'C++', version: '14' },
   { value: 'java', label: 'Java', version: 'Language Level 1.8' },
   { value: 'python', label: 'Python', version: '3.x' },
-  { value: 'bash', label: 'Bash Shell', version: '' },
-  { value: 'c#', label: 'C#', version: 'Mono' },
   { value: 'javascript', label: 'JavaScript', version: 'Node.js' },
   { value: 'go', label: 'Go', version: '1.20.x' }
 ];

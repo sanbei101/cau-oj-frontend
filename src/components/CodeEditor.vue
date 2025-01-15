@@ -38,24 +38,21 @@ import { NButton, NIcon, NInputGroup, NInputGroupLabel, NSelect } from 'naive-ui
 import { nextTick, onMounted, ref, watch } from 'vue';
 
 // CodeMirror 语言模式
-const Modes = [
-  'text/x-csrc',
-  'text/x-c++src',
-  'text/x-java',
-  'text/x-python',
-  'text/x-sh',
-  'text/x-csharp',
-  'text/javascript',
-  'text/x-kotlin',
-  'text/x-go'
-];
+const Modes: Record<string, string> = {
+  c: 'text/x-csrc',
+  cpp: 'text/x-c++src',
+  java: 'text/x-java',
+  python: 'text/x-python',
+  javascript: 'text/javascript',
+  go: 'text/x-go'
+};
 
 const renderLabel = (option: LanguageOption) => {
   return [option.label];
 };
 
 const cmOptions = ref<EditorConfiguration>({
-  mode: Modes[0],
+  mode: Modes.c,
   tabSize: 4,
   smartIndent: true,
   indentUnit: 4,
@@ -65,7 +62,7 @@ const cmOptions = ref<EditorConfiguration>({
   scrollbarStyle: 'overlay'
 });
 
-const language = ref<string>('c'); // 当前选中的语言ID
+const language = ref<string>('c');
 const languageOptions = ref<Array<LanguageOption>>(LanguageOptions);
 const editor = ref<HTMLTextAreaElement | null>(null);
 
@@ -85,9 +82,6 @@ const props = withDefaults(
 );
 
 const emit = defineEmits<{
-  // eslint-disable-next-line no-unused-vars
-  (e: 'update:modelValue', value: string): void;
-  // eslint-disable-next-line no-unused-vars
   (e: 'submit', value: SourceCode): void;
 }>();
 

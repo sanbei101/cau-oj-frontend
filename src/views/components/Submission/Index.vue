@@ -41,7 +41,7 @@ import { type SourceCode } from '@/type';
 import { setTitle } from '@/utils';
 import _ from 'lodash';
 import { NH3, NModal, NScrollbar, NTabPane, NTabs, useMessage } from 'naive-ui';
-import { inject, onBeforeMount, ref, watch } from 'vue';
+import { inject, onBeforeMount, ref } from 'vue';
 import ResultDialog from './ResultDialog.vue';
 import Skeleton from './Skeleton.vue';
 
@@ -54,10 +54,6 @@ const disableSubmit = ref<boolean>(false);
 const problem = ref<Problem>(new Problem());
 const code = ref<string>('');
 const submitData = ref<SubmitData | null>(null);
-
-watch(code, (newcode) => {
-  console.log(newcode);
-});
 
 const theme = inject('themeStr') as 'light' | 'dark';
 // const isLoggedIn = computed(() => store.user.isLoggedIn);

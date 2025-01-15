@@ -14,10 +14,9 @@ import { useStore } from '@/store';
 import { themeBase, themeDark } from '@/theme';
 import { dateZhCN, type GlobalThemeOverrides, NConfigProvider, NGlobalStyle, zhCN } from 'naive-ui';
 import { computed, nextTick, onMounted, provide, ref } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const store = useStore();
-const route = useRoute();
 const router = useRouter();
 
 const show = ref(true);
@@ -52,19 +51,6 @@ router.beforeEach((to, from) => {
     // 意外进入错误页面却没有错误信息，返回上一页
     router.replace({ path: from.fullPath });
   }
-});
-
-// 根据路由生成管理页面导航
-router.afterEach(() => {
-  const routes: Array<string> = [];
-
-  route.matched.forEach((r) => {
-    if (r.meta.title) {
-      routes.push(r.meta.title as string);
-    }
-  });
-
-  store.app.setBreadcrumb(routes);
 });
 
 onMounted(() => {
