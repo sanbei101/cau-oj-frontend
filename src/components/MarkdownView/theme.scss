@@ -1,9 +1,9 @@
 .markdown-body {
   font-family: inherit;
 
-  &.light {
-    @import 'highlight.js/scss/github';
-  }
+  // &.light {
+  //   // @import 'highlight.js/scss/github';
+  // }
 
   & > *:first-child {
     margin-top: 0;
@@ -151,7 +151,7 @@
   }
 
   &.dark {
-    @import 'highlight.js/scss/github-dark';
+    // @import 'highlight.js/scss/github-dark';
 
     --code-block-color: #161b22;
     --code-line-color: #21262d;

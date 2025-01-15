@@ -12,7 +12,6 @@ import python from 'highlight.js/lib/languages/python';
 import MarkdownIt from 'markdown-it';
 import markdownItContainer from 'markdown-it-container';
 import { computed } from 'vue';
-import { ImgPlugin } from './markdown-img';
 import { KatexPlugin } from './markdown-katex';
 
 highlightJs.registerLanguage('markdown', markdown);
@@ -37,7 +36,6 @@ const md = new MarkdownIt({
 });
 
 md.use(KatexPlugin);
-md.use(ImgPlugin);
 md.use(markdownItContainer, 'info', {
   validate: (params: string) => {
     return params.trim() === 'info';
