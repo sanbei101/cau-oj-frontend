@@ -1,8 +1,8 @@
 <template>
   <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; height: 50px">
-    <n-button text tag="a" href="https://github.com/sanbei101/cau-oj" target="_blank"> © CAU-OJ </n-button>
+    <n-button text tag="a" href="https://github.com/sanbei101/cau-oj-frontend" target="_blank"> © CAU-OJ </n-button>
     <n-divider vertical />
-    <n-button text tag="a" href="https://github.com/sanbei101/cau-oj" target="_blank">
+    <n-button text tag="a" href="https://github.com/sanbei101/cau-oj-frontend" target="_blank">
       <template #icon>
         <n-icon size="16">
           <github-icon />

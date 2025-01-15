@@ -27,7 +27,7 @@
       </div>
     </div>
   </div>
-  <n-modal v-model:show="showResult" :auto-focus="false" :mask-closable="false" preset="card" style="width: 600px; margin-top: 200px">
+  <n-modal v-model:show="showResult" :auto-focus="false" :mask-closable="false" preset="card" style="width: 600px">
     <result-dialog :submit-data="submitData" v-if="submitData" />
   </n-modal>
 </template>
