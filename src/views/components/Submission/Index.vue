@@ -70,9 +70,7 @@ onBeforeMount(() => {
   queryProblem();
 });
 
-/**
- * 获取题目数据
- */
+// 查询题目
 function queryProblem() {
   ProblemApi.getSingle(props.pid)
     .then((data) => {
@@ -87,9 +85,7 @@ function queryProblem() {
     });
 }
 
-/**
- * 提交代码
- */
+// 提交代码
 const submitClick = _.throttle(submit, 1000);
 
 function submit(data: SourceCode) {
