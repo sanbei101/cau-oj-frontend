@@ -65,7 +65,7 @@ const cmOptions = ref<EditorConfiguration>({
   scrollbarStyle: 'overlay'
 });
 
-const language = ref<number>(0); // 当前选中的语言ID
+const language = ref<string>('c'); // 当前选中的语言ID
 const languageOptions = ref<Array<LanguageOption>>(LanguageOptions);
 const editor = ref<HTMLTextAreaElement | null>(null);
 

@@ -5,7 +5,7 @@ const ApiPath = {
   PROBLEM: '/problem/get-all-problem',
   SingleProblem: '/problem/get-problem-by-id',
   SOLUTION: '/core/solution',
-  SUBMIT: '/judge/submit'
+  SUBMIT: '/judge/submit-code'
 };
 
 function resolveError(error: any): ErrorMessage {

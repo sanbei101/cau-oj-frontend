@@ -28,12 +28,12 @@
     </div>
   </div>
   <n-modal v-model:show="showResult" :auto-focus="false" :mask-closable="false" preset="card" style="width: 600px; margin-top: 200px">
-    <result-dialog :submit-time="submitTime" style="margin-bottom: 12px" />
+    <result-dialog :submit-data="submitData" v-if="submitData" />
   </n-modal>
 </template>
 
 <script setup lang="ts">
-import { JudgeApi, ProblemApi } from '@/api/request';
+import { ProblemApi } from '@/api/request';
 import { ErrorMessage, Problem, type SubmitData } from '@/api/type';
 import { CodeEditor, MarkdownView } from '@/components';
 import { useStore } from '@/store';
@@ -53,7 +53,7 @@ const showResult = ref<boolean>(false);
 const disableSubmit = ref<boolean>(false);
 const problem = ref<Problem>(new Problem());
 const code = ref<string>('');
-const submitTime = ref<number>(0);
+const submitData = ref<SubmitData | null>(null);
 
 watch(code, (newcode) => {
   console.log(newcode);
@@ -65,8 +65,6 @@ const theme = inject('themeStr') as 'light' | 'dark';
 const props = defineProps<{
   pid: number;
 }>();
-
-const submitClick = _.throttle(submit, 1000);
 
 onBeforeMount(() => {
   queryProblem();
@@ -92,6 +90,8 @@ function queryProblem() {
 /**
  * 提交代码
  */
+const submitClick = _.throttle(submit, 1000);
+
 function submit(data: SourceCode) {
   if (data.code.trim().length == 0 || disableSubmit.value) {
     return;
@@ -99,24 +99,15 @@ function submit(data: SourceCode) {
 
   disableSubmit.value = true;
 
-  const submitData: SubmitData = {
+  submitData.value = {
     language: data.language,
     problemId: props.pid,
-    sourceCode: data.code.trim(),
-    type: 0
+    sourceCode: data.code.trim()
   };
+  message.info('正在提交代码...');
+  disableSubmit.value = false;
 
-  JudgeApi.submit(submitData)
-    .then((time) => {
-      submitTime.value = time;
-      showResult.value = true;
-    })
-    .catch((err: ErrorMessage) => {
-      message.error(err.toString());
-    })
-    .finally(() => {
-      disableSubmit.value = false;
-    });
+  showResult.value = true;
 }
 </script>
 

@@ -7,9 +7,7 @@ const ProblemApi = {
    */
   async getAll(page: number, size: number, keyword: string | null = null): Promise<Page<Problem>> {
     try {
-      const res = await axios({
-        url: ApiPath.PROBLEM,
-        method: 'GET',
+      const res = await axios.get(ApiPath.PROBLEM, {
         params: {
           page,
           size,
@@ -17,11 +15,7 @@ const ProblemApi = {
         }
       });
 
-      if (res.status === 200) {
-        return res.data as Page<Problem>;
-      } else {
-        return { data: [], total: 0 };
-      }
+      return res.data as Page<Problem>;
     } catch (error) {
       throw resolveError(error);
     }
@@ -32,9 +26,7 @@ const ProblemApi = {
    */
   async getSingle(pid: number): Promise<Problem> {
     try {
-      const res = await axios({
-        url: ApiPath.SingleProblem,
-        method: 'GET',
+      const res = await axios.get(ApiPath.SingleProblem, {
         params: {
           id: pid
         }

@@ -19,33 +19,21 @@ export type Page<T> = {
 export type SubmitData = {
   // uid: number;
   problemId: number;
-  language: number;
+  language: string;
   sourceCode: string;
-  type: number;
 };
 
-export class JudgeResult {
-  solutionId?: string;
-  uid?: number;
-  username?: string;
-  nickname?: string;
-  problemId?: number;
-  language?: number;
-  title?: string;
-  state?: number;
-  result?: number;
-  stateText?: string;
-  resultText?: string;
-  score?: number;
-  total?: number;
-  passed?: number;
-  time?: number;
-  memory?: number;
-  errorInfo?: string;
-  sourceCode?: string;
-  // UNIX_TIMESTAMP(毫秒)
-  submitTime?: number;
-}
+export type SingleResult = {
+  is_success: boolean;
+  is_strict_success: boolean;
+  expected_output: string;
+  actual_output: string;
+};
+
+export type JudgeResult = {
+  count: number;
+  results: SingleResult[];
+};
 
 export type Language = {
   count: number;
