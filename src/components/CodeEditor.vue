@@ -59,7 +59,7 @@ const cmOptions = ref<EditorConfiguration>({
   lineNumbers: true,
   matchBrackets: true,
   autoCloseBrackets: true,
-  scrollbarStyle: 'overlay'
+  scrollbarStyle: 'null'
 });
 
 const language = ref<string>('c');
