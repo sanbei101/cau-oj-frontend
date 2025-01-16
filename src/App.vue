@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { useStore } from '@/store';
 import { themeBase, themeDark } from '@/theme';
-import { dateZhCN, type GlobalThemeOverrides, NConfigProvider, NGlobalStyle, zhCN } from 'naive-ui';
+import { darkTheme, dateZhCN, type GlobalThemeOverrides, NConfigProvider, NGlobalStyle, zhCN } from 'naive-ui';
 import { computed, nextTick, onMounted, provide, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -20,11 +20,11 @@ const store = useStore();
 const router = useRouter();
 
 const show = ref(true);
-const theme = computed(() => store.app.theme);
-const themeStr = computed(() => (store.app.theme === null ? 'light' : 'dark'));
+const theme = computed(() => (store.app.theme === 'dark' ? darkTheme : null));
+const themeStr = computed(() => (store.app.theme === 'dark' ? 'dark' : 'light'));
 
 const themeOverrides = computed<GlobalThemeOverrides>(() => {
-  if (store.app.theme != null) {
+  if (store.app.theme === 'dark') {
     return themeDark;
   }
 

@@ -17,7 +17,7 @@ let icon: RendererNode | null = null;
 const store = useStore();
 const isDarkTheme = computed<boolean>({
   get: () => {
-    return store.app.theme != null;
+    return store.app.theme === 'dark';
   },
   set: (value) => {
     store.app.setTheme(value ? 'dark' : 'light');
