@@ -2,15 +2,16 @@
   <n-spin :show="loading">
     <n-result :title="Title" :status="Status" size="large">
       <template #default>
-        <n-data-table :columns="columns" :data="tableData.results" :loading="loading" :pagination="false" :empty="'暂无数据'" />
+        <n-data-table :columns="columns" :data="tableData.results" :loading="loading" :pagination="false" :single-line="false" />
       </template>
     </n-result>
   </n-spin>
 </template>
 
-<script setup lang="ts">
+<script setup lang="tsx">
 import { ref, computed, onMounted } from 'vue';
-import { NResult, NDataTable, NSpin, type DataTableColumns, type ResultProps, useMessage } from 'naive-ui';
+import { CheckmarkCircle, CloseCircle } from '@vicons/ionicons5';
+import { NResult, NDataTable, NSpin, type DataTableColumns, NTag, NIcon, type ResultProps, useMessage } from 'naive-ui';
 import { ErrorMessage, JudgeResult, SingleResult, SubmitData } from '@/api/type';
 import { JudgeApi } from '@/api/request';
 import { useStore } from '@/store';
@@ -47,20 +48,37 @@ const columns: DataTableColumns<SingleResult> = [
   {
     title: '结果',
     key: 'is_success',
-    render(row: SingleResult) {
-      return row.is_success ? '通过' : '失败';
+    align: 'center',
+    render: (row) => {
+      return (
+        <NTag type={row.is_success ? 'success' : 'error'} round bordered={false}>
+          {{
+            icon: () => <NIcon>{row.is_success ? <CheckmarkCircle /> : <CloseCircle />}</NIcon>,
+            default: () => (row.is_success ? '通过' : '未通过')
+          }}
+        </NTag>
+      );
     }
   },
   {
     title: '严格匹配',
     key: 'is_strict_success',
-    render(row: SingleResult) {
-      return row.is_strict_success ? '是' : '否';
+    align: 'center',
+    render: (row) => {
+      return (
+        <NTag type={row.is_strict_success ? 'success' : 'error'} round bordered={false}>
+          {{
+            icon: () => <NIcon>{row.is_strict_success ? <CheckmarkCircle /> : <CloseCircle />}</NIcon>,
+            default: () => (row.is_strict_success ? '通过' : '未通过')
+          }}
+        </NTag>
+      );
     }
   },
   {
     title: '期望输出',
     key: 'expected_output',
+    align: 'center',
     ellipsis: {
       tooltip: true
     }
@@ -68,6 +86,7 @@ const columns: DataTableColumns<SingleResult> = [
   {
     title: '实际输出',
     key: 'actual_output',
+    align: 'center',
     ellipsis: {
       tooltip: true
     }

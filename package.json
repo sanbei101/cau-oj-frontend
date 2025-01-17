@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vicons/ionicons5": "^0.13.0",
     "axios": "^1.7.9",
     "codemirror": "^5.65.6",
     "dayjs": "^1.11.13",
