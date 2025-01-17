@@ -2,7 +2,7 @@
   <div class="code-editor">
     <n-input-group>
       <n-input-group-label :style="{ width: '110px' }"> 选择语言 </n-input-group-label>
-      <n-select v-model:value="language" :options="languageOptions" :render-label="renderLabel" />
+      <n-select v-model:value="language" :options="languageOptions" />
       <n-button type="primary" secondary :loading="loading" @click="submit">
         <template #icon>
           <n-icon>
@@ -19,8 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import type { LanguageOption, SourceCode } from '@/type';
-import { LanguageOptions } from '@/type';
+import type { SourceCode } from '@/type';
 import { SendRound } from '@vicons/material';
 import CodeMirror, { type Editor, type EditorConfiguration } from 'codemirror';
 import 'codemirror/addon/edit/closebrackets.js';
@@ -36,7 +35,21 @@ import 'codemirror/theme/material-darker.css';
 import 'codemirror/theme/ttcn.css';
 import { NButton, NIcon, NInputGroup, NInputGroupLabel, NSelect } from 'naive-ui';
 import { nextTick, onMounted, ref, watch } from 'vue';
-
+// 支持的语言
+const languageOptions = ref([
+  {
+    label: 'Python',
+    value: 'python'
+  },
+  {
+    label: 'C',
+    value: 'c'
+  },
+  {
+    label: 'C++',
+    value: 'cpp'
+  }
+]);
 // CodeMirror 语言模式
 const Modes: Record<string, string> = {
   c: 'text/x-csrc',
@@ -45,10 +58,6 @@ const Modes: Record<string, string> = {
   python: 'text/x-python',
   javascript: 'text/javascript',
   go: 'text/x-go'
-};
-
-const renderLabel = (option: LanguageOption) => {
-  return [option.label];
 };
 
 const cmOptions = ref<EditorConfiguration>({
@@ -63,7 +72,6 @@ const cmOptions = ref<EditorConfiguration>({
 });
 
 const language = ref<string>('c');
-const languageOptions = ref<Array<LanguageOption>>(LanguageOptions);
 const editor = ref<HTMLTextAreaElement | null>(null);
 
 let cmEditor: Editor | null = null;
@@ -75,16 +83,23 @@ const props = withDefaults(
     theme: 'light' | 'dark';
   }>(),
   {
-    loading: false,
     value: '',
-    availableLanguages: null
+    loading: false,
+    theme: 'light'
   }
 );
 
 const emit = defineEmits<{
-  (e: 'submit', value: SourceCode): void;
+  submit: [sourceCode: SourceCode];
 }>();
-
+const submit = () => {
+  const sourceCode: SourceCode = {
+    language: language.value,
+    code: cmEditor!.getValue()
+  };
+  emit('submit', sourceCode);
+  console.log(cmEditor!.getValue());
+};
 watch(
   () => props.theme,
   (val) => {
@@ -125,11 +140,6 @@ onMounted(() => {
   cmEditor = CodeMirror.fromTextArea(editor.value!, cmOptions.value);
   cmEditor.setValue(props.value);
 });
-
-function submit() {
-  emit('submit', { language: language.value, code: cmEditor!.getValue() });
-  console.log(cmEditor!.getValue());
-}
 </script>
 
 <style scoped lang="scss">
