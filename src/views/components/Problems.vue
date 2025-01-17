@@ -28,12 +28,6 @@
   </div>
 </template>
 
-<script lang="tsx">
-export default {
-  name: 'ProblemList'
-};
-</script>
-
 <script setup lang="tsx">
 import { ProblemApi } from '@/api/request';
 import { ErrorMessage, type Page, Problem } from '@/api/type';

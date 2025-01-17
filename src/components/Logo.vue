@@ -21,12 +21,6 @@ defineProps({
 });
 </script>
 
-<script lang="ts">
-export default {
-  name: 'AppLogo'
-};
-</script>
-
 <style scoped lang="scss">
 .text-logo {
   font-weight: 500;
