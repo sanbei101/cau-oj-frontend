@@ -68,10 +68,10 @@ importers:
         version: 0.13.0
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
-        version: 5.2.1(vite@6.1.0(@types/node@20.17.0)(sass@1.84.0))(vue@3.5.13(typescript@5.7.3))
+        version: 5.2.1(vite@6.1.0(@types/node@20.17.0)(sass@1.85.0))(vue@3.5.13(typescript@5.7.3))
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.1.1
-        version: 4.1.1(vite@6.1.0(@types/node@20.17.0)(sass@1.84.0))(vue@3.5.13(typescript@5.7.3))
+        version: 4.1.1(vite@6.1.0(@types/node@20.17.0)(sass@1.85.0))(vue@3.5.13(typescript@5.7.3))
       naive-ui:
         specifier: ^2.41.0
         version: 2.41.0(vue@3.5.13(typescript@5.7.3))
@@ -79,8 +79,8 @@ importers:
         specifier: ^3.5.0
         version: 3.5.0
       sass:
-        specifier: ^1.84.0
-        version: 1.84.0
+        specifier: ^1.85.0
+        version: 1.85.0
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
@@ -89,10 +89,10 @@ importers:
         version: 0.0.3
       vite:
         specifier: ^6.1.0
-        version: 6.1.0(@types/node@20.17.0)(sass@1.84.0)
+        version: 6.1.0(@types/node@20.17.0)(sass@1.85.0)
       vite-plugin-compression:
         specifier: ^0.5.1
-        version: 0.5.1(vite@6.1.0(@types/node@20.17.0)(sass@1.84.0))
+        version: 0.5.1(vite@6.1.0(@types/node@20.17.0)(sass@1.85.0))
       vue-tsc:
         specifier: ^2.2.2
         version: 2.2.2(typescript@5.7.3)
@@ -1103,8 +1103,8 @@ packages:
     resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
     engines: {node: '>=6'}
 
-  readdirp@4.1.1:
-    resolution: {integrity: sha512-h80JrZu/MHUZCyHu5ciuoI0+WxsCxzxJTILn6Fs8rxSnFPh+UVHYfeIxK1nVGugMqkfC4vJcBOYbkfkwYK0+gw==}
+  readdirp@4.1.2:
+    resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
     engines: {node: '>= 14.18.0'}
 
   rfdc@1.4.1:
@@ -1115,8 +1115,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
-  sass@1.84.0:
-    resolution: {integrity: sha512-XDAbhEPJRxi7H0SxrnOpiXFQoUJHwkR2u3Zc4el+fK/Tt5Hpzw5kkQ59qVDfvdaUq6gCrEZIbySFBM2T9DNKHg==}
+  sass@1.85.0:
+    resolution: {integrity: sha512-3ToiC1xZ1Y8aU7+CkgCI/tqyuPXEmYGJXO7H4uqp0xkLXUqp88rQQ4j1HmP37xSJLbCJPaIiv+cT1y+grssrww==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -1730,19 +1730,19 @@ snapshots:
 
   '@vicons/material@0.13.0': {}
 
-  '@vitejs/plugin-vue-jsx@4.1.1(vite@6.1.0(@types/node@20.17.0)(sass@1.84.0))(vue@3.5.13(typescript@5.7.3))':
+  '@vitejs/plugin-vue-jsx@4.1.1(vite@6.1.0(@types/node@20.17.0)(sass@1.85.0))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-typescript': 7.25.9(@babel/core@7.26.0)
       '@vue/babel-plugin-jsx': 1.2.5(@babel/core@7.26.0)
-      vite: 6.1.0(@types/node@20.17.0)(sass@1.84.0)
+      vite: 6.1.0(@types/node@20.17.0)(sass@1.85.0)
       vue: 3.5.13(typescript@5.7.3)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@5.2.1(vite@6.1.0(@types/node@20.17.0)(sass@1.84.0))(vue@3.5.13(typescript@5.7.3))':
+  '@vitejs/plugin-vue@5.2.1(vite@6.1.0(@types/node@20.17.0)(sass@1.85.0))(vue@3.5.13(typescript@5.7.3))':
     dependencies:
-      vite: 6.1.0(@types/node@20.17.0)(sass@1.84.0)
+      vite: 6.1.0(@types/node@20.17.0)(sass@1.85.0)
       vue: 3.5.13(typescript@5.7.3)
 
   '@volar/language-core@2.4.11':
@@ -1970,7 +1970,7 @@ snapshots:
 
   chokidar@4.0.3:
     dependencies:
-      readdirp: 4.1.1
+      readdirp: 4.1.2
 
   codemirror@5.65.18: {}
 
@@ -2246,7 +2246,7 @@ snapshots:
 
   punycode.js@2.3.1: {}
 
-  readdirp@4.1.1: {}
+  readdirp@4.1.2: {}
 
   rfdc@1.4.1: {}
 
@@ -2275,7 +2275,7 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.34.6
       fsevents: 2.3.3
 
-  sass@1.84.0:
+  sass@1.85.0:
     dependencies:
       chokidar: 4.0.3
       immutable: 5.0.3
@@ -2334,16 +2334,16 @@ snapshots:
 
   vfonts@0.0.3: {}
 
-  vite-plugin-compression@0.5.1(vite@6.1.0(@types/node@20.17.0)(sass@1.84.0)):
+  vite-plugin-compression@0.5.1(vite@6.1.0(@types/node@20.17.0)(sass@1.85.0)):
     dependencies:
       chalk: 4.1.2
       debug: 4.3.7
       fs-extra: 10.1.0
-      vite: 6.1.0(@types/node@20.17.0)(sass@1.84.0)
+      vite: 6.1.0(@types/node@20.17.0)(sass@1.85.0)
     transitivePeerDependencies:
       - supports-color
 
-  vite@6.1.0(@types/node@20.17.0)(sass@1.84.0):
+  vite@6.1.0(@types/node@20.17.0)(sass@1.85.0):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.5.2
@@ -2351,7 +2351,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.17.0
       fsevents: 2.3.3
-      sass: 1.84.0
+      sass: 1.85.0
 
   vooks@0.2.12(vue@3.5.13(typescript@5.7.3)):
     dependencies:
