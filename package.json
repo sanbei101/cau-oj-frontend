@@ -33,7 +33,7 @@
     "@types/markdown-it-container": "^2.0.10",
     "@vicons/fa": "^0.13.0",
     "@vicons/material": "^0.13.0",
-    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue": "^6.0.1",
     "@vitejs/plugin-vue-jsx": "^4.1.1",
     "naive-ui": "^2.41.0",
     "prettier": "^3.6.1",
