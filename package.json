@@ -14,7 +14,7 @@
   "dependencies": {
     "@vicons/ionicons5": "^0.13.0",
     "axios": "^1.13.2",
-    "codemirror": "^5.65.6",
+    "codemirror": "^5.65.20",
     "dayjs": "^1.11.13",
     "highlight.js": "^11.11.1",
     "katex": "^0.16.21",
@@ -26,7 +26,7 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@types/codemirror": "^5.60.16",
+    "@types/codemirror": "^5.60.17",
     "@types/katex": "^0.16.7",
     "@types/lodash": "^4.17.20",
     "@types/markdown-it": "^14.1.2",
