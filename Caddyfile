@@ -1,0 +1,5 @@
+oj.sanbei101.xyz {
+	root * /srv
+	file_server
+	encode gzip
+}

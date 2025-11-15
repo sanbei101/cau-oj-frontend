@@ -24,7 +24,7 @@ function resolveError(error: any): ErrorMessage {
 }
 
 const axios = _axios.create({
-  baseURL: 'https://oj-back.sanbei101.tech'
+  baseURL: 'https://oj-back.sanbei101.xyz'
 });
 export default axios;
 export { ApiPath, resolveError };
