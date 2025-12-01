@@ -36,7 +36,7 @@
     "@vitejs/plugin-vue": "^6.0.2",
     "@vitejs/plugin-vue-jsx": "^5.1.2",
     "naive-ui": "^2.43.2",
-    "prettier": "^3.7.1",
+    "prettier": "^3.7.3",
     "sass": "^1.94.2",
     "typescript": "^5.8.2",
     "vfonts": "^0.0.3",
