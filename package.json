@@ -30,7 +30,7 @@
     "@types/katex": "^0.16.7",
     "@types/lodash": "^4.17.21",
     "@types/markdown-it": "^14.1.2",
-    "@types/markdown-it-container": "^2.0.10",
+    "@types/markdown-it-container": "^2.0.11",
     "@vicons/fa": "^0.13.0",
     "@vicons/material": "^0.13.0",
     "@vitejs/plugin-vue": "^6.0.2",
