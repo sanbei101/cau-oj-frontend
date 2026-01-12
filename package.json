@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/codemirror": "^5.60.17",
-    "@types/katex": "^0.16.7",
+    "@types/katex": "^0.16.8",
     "@types/lodash": "^4.17.21",
     "@types/markdown-it": "^14.1.2",
     "@types/markdown-it-container": "^2.0.11",
