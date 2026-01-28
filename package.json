@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@vicons/ionicons5": "^0.13.0",
-    "axios": "^1.13.3",
+    "axios": "^1.13.4",
     "codemirror": "^5.65.20",
     "dayjs": "^1.11.19",
     "highlight.js": "^11.11.1",
