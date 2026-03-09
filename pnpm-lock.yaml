@@ -73,8 +73,8 @@ importers:
         specifier: ^5.1.4
         version: 5.1.4(vite@7.3.1(sass@1.97.3)(yaml@2.8.2))(vue@3.5.29(typescript@5.8.2))
       naive-ui:
-        specifier: ^2.43.2
-        version: 2.43.2(vue@3.5.29(typescript@5.8.2))
+        specifier: ^2.44.1
+        version: 2.44.1(vue@3.5.29(typescript@5.8.2))
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -857,9 +857,6 @@ packages:
   csstype@3.0.11:
     resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
 
-  csstype@3.2.2:
-    resolution: {integrity: sha512-D80T+tiqkd/8B0xNlbstWDG4x6aqVfO52+OlSUNIdkTvmNw0uQpJLeos2J/2XvpyidAFuTPmpad+tUxLndwj6g==}
-
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
@@ -1117,8 +1114,9 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  naive-ui@2.43.2:
-    resolution: {integrity: sha512-YlLMnGrwGTOc+zMj90sG3ubaH5/7czsgLgGcjTLA981IUaz8r6t4WIujNt8r9PNr+dqv6XNEr0vxkARgPPjfBQ==}
+  naive-ui@2.44.1:
+    resolution: {integrity: sha512-reo8Esw0p58liZwbUutC7meW24Xbn3EwNv91zReWKm2W4JPu+zfgJRn/F7aO0BFmvN+h2brA2M5lRvYqLq4kuA==}
+    engines: {node: '>=20'}
     peerDependencies:
       vue: ^3.0.0
 
@@ -2100,8 +2098,6 @@ snapshots:
 
   csstype@3.0.11: {}
 
-  csstype@3.2.2: {}
-
   csstype@3.2.3: {}
 
   date-fns-tz@3.2.0(date-fns@4.1.0):
@@ -2342,16 +2338,15 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  naive-ui@2.43.2(vue@3.5.29(typescript@5.8.2)):
+  naive-ui@2.44.1(vue@3.5.29(typescript@5.8.2)):
     dependencies:
       '@css-render/plugin-bem': 0.15.14(css-render@0.15.14)
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.29(typescript@5.8.2))
-      '@types/katex': 0.16.8
       '@types/lodash': 4.17.24
       '@types/lodash-es': 4.17.12
       async-validator: 4.2.5
       css-render: 0.15.14
-      csstype: 3.2.2
+      csstype: 3.2.3
       date-fns: 4.1.0
       date-fns-tz: 3.2.0(date-fns@4.1.0)
       evtd: 0.2.4
