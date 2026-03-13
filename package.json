@@ -15,7 +15,7 @@
     "@vicons/ionicons5": "^0.13.0",
     "axios": "^1.13.6",
     "codemirror": "^5.65.21",
-    "dayjs": "^1.11.19",
+    "dayjs": "^1.11.20",
     "highlight.js": "^11.11.1",
     "katex": "^0.16.38",
     "lodash": "^4.17.23",
