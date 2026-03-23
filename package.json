@@ -17,7 +17,7 @@
     "codemirror": "^5.65.21",
     "dayjs": "^1.11.20",
     "highlight.js": "^11.11.1",
-    "katex": "^0.16.39",
+    "katex": "^0.16.40",
     "lodash": "^4.17.23",
     "markdown-it": "^14.1.1",
     "markdown-it-container": "^4.0.0",
