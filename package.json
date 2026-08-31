@@ -35,7 +35,7 @@
     "@vicons/material": "^0.13.0",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vitejs/plugin-vue-jsx": "^5.1.6",
-    "naive-ui": "^2.45.2",
+    "naive-ui": "^2.45.3",
     "prettier": "^3.9.6",
     "sass": "^1.103.1",
     "typescript": "^7.0.2",

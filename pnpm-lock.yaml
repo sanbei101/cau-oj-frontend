@@ -73,8 +73,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6(supports-color@7.2.0)(vite@8.2.2(esbuild@0.27.2)(sass@1.103.1)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2))
       naive-ui:
-        specifier: ^2.45.2
-        version: 2.45.2(vue@3.5.41(typescript@7.0.2))
+        specifier: ^2.45.3
+        version: 2.45.3(vue@3.5.41(typescript@7.0.2))
       prettier:
         specifier: ^3.9.6
         version: 3.9.6
@@ -1292,8 +1292,8 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  naive-ui@2.45.2:
-    resolution: {integrity: sha512-KshetbFOX/uZ/Pe+60hJoUAo47x5QO1JpZaUVPQCQkNhFfJ7hKsX55A8oMFQHccEpLuQUMPkJ41cX94R4nWUjg==}
+  naive-ui@2.45.3:
+    resolution: {integrity: sha512-D83gJ+6zUdkQ5DuUbmlfyaM1t8pV5WMPa6KmL9mByqQuiL12qBdA0n/iEIth4dQw1x/duNGpOS2anpt5FKO1kw==}
     engines: {node: '>=20'}
     peerDependencies:
       vue: ^3.0.0
@@ -2631,7 +2631,7 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  naive-ui@2.45.2(vue@3.5.41(typescript@7.0.2)):
+  naive-ui@2.45.3(vue@3.5.41(typescript@7.0.2)):
     dependencies:
       '@css-render/plugin-bem': 0.15.14(css-render@0.15.14)
       '@css-render/vue3-ssr': 0.15.14(vue@3.5.41(typescript@7.0.2))
